@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mini GPS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <div class="logo">
+            <h1>Mini GPS</h1>
+            <p>Localização em tempo real</p>
+        </div>
+
+        <button id="temaBtn" class="botao-tema">
+            Modo escuro
+        </button>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="abas">
+
+            <button
+                id="abaGps"
+                class="aba ativa"
+            >
+                Localização atual
+            </button>
+
+            <button
+                id="abaCep"
+                class="aba"
+            >
+                Buscar por CEP
+            </button>
+
+        </section>
+
+
+        <section id="painelGps" class="painel">
+
+            <section class="introducao">
+
+                <div>
+
+                    <span class="etiqueta">
+                        GPS ATIVO
+                    </span>
+
+                    <h2>
+                        Sua localização
+                    </h2>
+
+                    <p>
+                        Veja sua posição atual diretamente no mapa.
+                    </p>
+
+                </div>
+
+                <button
+                    id="atualizarBtn"
+                    class="botao-atualizar"
+                >
+                    Atualizar localização
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <section
+            id="painelCep"
+            class="painel escondido"
+        >
+
+            <section class="introducao">
+
+                <div>
+
+                    <span class="etiqueta">
+                        BUSCA POR CEP
+                    </span>
+
+                    <h2>
+                        Localizar endereço
+                    </h2>
+
+                    <p>
+                        Digite um CEP para encontrar o endereço no mapa.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <div class="busca-cep">
+
+                <div class="campo-cep">
+
+                    <label for="cep">
+                        CEP
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cep"
+                        placeholder="12600-000"
+                        maxlength="9"
+                    >
+
+                </div>
+
+                <button
+                    id="buscarCepBtn"
+                    class="botao-atualizar"
+                >
+                    Localizar
+                </button>
+
+            </div>
+
+
+            <div
+                id="resultadoCep"
+                class="resultado-cep"
+            >
+                Digite um CEP para localizar o endereço.
+            </div>
+
+        </section>
+
+
+        <section class="informacoes">
+
+            <div class="card">
+
+                <div class="icone">
+                    LAT
+                </div>
+
+                <div>
+
+                    <span class="titulo-card">
+                        Latitude
+                    </span>
+
+                    <strong id="latitude">
+                        ---
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    LON
+                </div>
+
+                <div>
+
+                    <span class="titulo-card">
+                        Longitude
+                    </span>
+
+                    <strong id="longitude">
+                        ---
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">
+                    GPS
+                </div>
+
+                <div>
+
+                    <span class="titulo-card">
+                        Status
+                    </span>
+
+                    <strong id="status">
+                        Aguardando...
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="mapa-container">
+
+            <div class="mapa-topo">
+
+                <div>
+
+                    <h3>
+                        Mapa da localização
+                    </h3>
+
+                    <p id="endereco">
+                        Obtendo localização...
+                    </p>
+
+                </div>
+
+                <div class="indicador">
+
+                    <span></span>
+
+                    Localização atual
+
+                </div>
+
+            </div>
+
+
+            <div id="mapa"></div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Mini GPS - OpenStreetMap + Leaflet + ViaCEP
+        </p>
+
+    </footer>
+
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```

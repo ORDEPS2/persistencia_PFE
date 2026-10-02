@@ -1,0 +1,540 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #f4f6f8;
+    --superficie: #ffffff;
+    --superficie-secundaria: #f8fafc;
+
+    --texto: #172033;
+    --texto-secundario: #64748b;
+
+    --borda: #e2e8f0;
+
+    --primaria: #2563eb;
+    --primaria-hover: #1d4ed8;
+
+    --sucesso: #22c55e;
+    --erro: #ef4444;
+
+    --sombra: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+body.escuro {
+    --fundo: #0f172a;
+    --superficie: #172033;
+    --superficie-secundaria: #1e293b;
+
+    --texto: #f8fafc;
+    --texto-secundario: #94a3b8;
+
+    --borda: #334155;
+
+    --primaria: #3b82f6;
+    --primaria-hover: #60a5fa;
+
+    --sombra: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--fundo);
+    color: var(--texto);
+
+    min-height: 100vh;
+
+    transition: 0.3s;
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho {
+    width: 100%;
+
+    background: var(--superficie);
+
+    border-bottom: 1px solid var(--borda);
+
+    padding: 18px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 22px;
+}
+
+.logo p {
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+
+    margin-top: 4px;
+}
+
+
+/* BOTÃO TEMA */
+
+.botao-tema {
+    border: 1px solid var(--borda);
+
+    background: var(--superficie-secundaria);
+
+    color: var(--texto);
+
+    padding: 11px 16px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.botao-tema:hover {
+    background: var(--borda);
+
+    transform: translateY(-2px);
+}
+
+
+/* CONTAINER */
+
+.container {
+    width: min(1100px, 90%);
+
+    margin: 40px auto;
+}
+
+
+/* ABAS */
+
+.abas {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid var(--borda);
+}
+
+.aba {
+    border: none;
+
+    background: transparent;
+
+    color: var(--texto-secundario);
+
+    padding: 12px 18px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    border-bottom: 3px solid transparent;
+
+    transition: 0.2s;
+}
+
+.aba:hover {
+    color: var(--primaria);
+}
+
+.aba.ativa {
+    color: var(--primaria);
+
+    border-bottom-color: var(--primaria);
+}
+
+
+/* PAINÉIS */
+
+.painel {
+    display: block;
+}
+
+.escondido {
+    display: none;
+}
+
+
+/* INTRODUÇÃO */
+
+.introducao {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.etiqueta {
+    display: inline-block;
+
+    background: rgba(37, 99, 235, 0.12);
+
+    color: var(--primaria);
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.introducao h2 {
+    font-size: 32px;
+
+    margin-bottom: 7px;
+}
+
+.introducao p {
+    color: var(--texto-secundario);
+}
+
+
+/* BOTÃO */
+
+.botao-atualizar {
+    border: none;
+
+    background: var(--primaria);
+
+    color: white;
+
+    padding: 13px 20px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    white-space: nowrap;
+}
+
+.botao-atualizar:hover {
+    background: var(--primaria-hover);
+
+    transform: translateY(-2px);
+}
+
+
+/* BUSCA CEP */
+
+.busca-cep {
+    background: var(--superficie);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 15px;
+
+    box-shadow: var(--sombra);
+
+    margin-bottom: 15px;
+}
+
+.campo-cep {
+    flex: 1;
+}
+
+.campo-cep label {
+    display: block;
+
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.campo-cep input {
+    width: 100%;
+
+    border: 1px solid var(--borda);
+
+    background: var(--superficie-secundaria);
+
+    color: var(--texto);
+
+    padding: 13px 15px;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.2s;
+}
+
+.campo-cep input:focus {
+    border-color: var(--primaria);
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* RESULTADO CEP */
+
+.resultado-cep {
+    background: var(--superficie);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+
+    box-shadow: var(--sombra);
+}
+
+.resultado-cep.sucesso {
+    color: var(--texto);
+}
+
+.resultado-cep.erro {
+    color: var(--erro);
+}
+
+
+/* CARDS */
+
+.informacoes {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.card {
+    background: var(--superficie);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow: var(--sombra);
+}
+
+.icone {
+    width: 45px;
+    height: 45px;
+
+    background: var(--superficie-secundaria);
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    color: var(--primaria);
+}
+
+.titulo-card {
+    display: block;
+
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+.card strong {
+    font-size: 16px;
+}
+
+
+/* MAPA */
+
+.mapa-container {
+    background: var(--superficie);
+
+    border: 1px solid var(--borda);
+
+    border-radius: 18px;
+
+    padding: 18px;
+
+    box-shadow: var(--sombra);
+}
+
+.mapa-topo {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 15px;
+}
+
+.mapa-topo h3 {
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+.mapa-topo p {
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+}
+
+.indicador {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+}
+
+.indicador span {
+    width: 9px;
+    height: 9px;
+
+    background: var(--sucesso);
+
+    border-radius: 50%;
+}
+
+
+/* MAPA */
+
+#mapa {
+    width: 100%;
+
+    height: 500px;
+
+    border-radius: 13px;
+
+    overflow: hidden;
+}
+
+
+/* RODAPÉ */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    color: var(--texto-secundario);
+
+    font-size: 12px;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    .introducao {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .informacoes {
+        grid-template-columns: 1fr;
+    }
+
+    .mapa-topo {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    #mapa {
+        height: 400px;
+    }
+
+    .introducao h2 {
+        font-size: 27px;
+    }
+
+    .cabecalho {
+        padding: 15px 5%;
+    }
+
+    .botao-tema {
+        padding: 9px 12px;
+    }
+
+    .busca-cep {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .abas {
+        overflow-x: auto;
+    }
+
+    .aba {
+        white-space: nowrap;
+    }
+}
